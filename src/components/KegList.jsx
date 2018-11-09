@@ -46,7 +46,7 @@ const masterTappedKegList = [
   {
     tapped: true,
     name: 'Pallet Jack',
-    brewery: "Barley Brown's",
+    brewery: 'Barley Browns',
     img: barleyBrown,
     style: 'IPA',
     abv: 7,
@@ -88,24 +88,24 @@ function KegList() {
     marginTop: '20px',
     width: '80%',
     marginBottom: '70px'
-    }
+  };
 
   return(
     <div style={kegListStyles}>
       {masterTappedKegList.map((beer, index) =>
-      <Keg tapped={beer.tapped}
-        name={beer.name}
-        brewery={beer.brewery}
-        img={beer.img}
-        style={beer.style}
-        abv={beer.abv}
-        ibu={beer.ibu}
-        price={beer.price}
-        pintCount={beer.pintCount}
-        region={beer.region}
-        key={index}/>
-        )}
-        <Keg/>
+        <Keg tapped={beer.tapped}
+          name={beer.name}
+          brewery={beer.brewery}
+          img={beer.img}
+          style={beer.style}
+          abv={beer.abv}
+          ibu={beer.ibu}
+          price={beer.price}
+          pintCount={beer.pintCount}
+          region={beer.region}
+          key={index}/>
+      )}
+      <Keg/>
     </div>
   );
 }

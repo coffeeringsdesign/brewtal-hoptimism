@@ -6,7 +6,7 @@ import EditKeg from './EditKeg';
 function Admin() {
   const adminContainerStyles = {
     marginBottom: '70px'
-  }
+  };
   return(
     <div style={adminContainerStyles}>
       <KegList/>

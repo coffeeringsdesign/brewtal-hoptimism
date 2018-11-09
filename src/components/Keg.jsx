@@ -16,7 +16,7 @@ function Keg(props) {
     borderRadius: '5px',
     alignItems: 'center',
     justifyContent: 'center'
-  }
+  };
   const kegInformationStyles = {
     display: 'flex',
     flexDirection: 'column',
@@ -24,10 +24,10 @@ function Keg(props) {
     marginLeft: '3em',
     marginRight: '1em',
     width: '200px'
-  }
+  };
   const beerLogoStyles = {
     width: '175px',
-  }
+  };
   const kegBreakdownStyles = {
     textAlign: 'center',
     display: 'flex',
@@ -35,10 +35,10 @@ function Keg(props) {
     justifyContent: 'space-around',
     height: '200px',
     width: '100px'
-  }
+  };
   const abvColorStyle = {
     color: 'red'
-  }
+  };
   return(
 
     <div style={kegStyles}>
@@ -47,7 +47,6 @@ function Keg(props) {
       </div>
       <div>
         <div style={kegInformationStyles}>
-
           <h1>{props.name}</h1>
           <h2>{props.brewery}</h2>
           <h3>Style: {props.style}</h3>
@@ -79,12 +78,13 @@ Keg.propTypes = {
   tapped: PropTypes.bool,
   name: PropTypes.string,
   brewery: PropTypes.string,
+  img: PropTypes.object,
   style: PropTypes.string,
   abv: PropTypes.number,
   ibu: PropTypes.string,
   price: PropTypes.string,
   pintCount: PropTypes.number,
   region: PropTypes.string
-}
+};
 
 export default Keg;

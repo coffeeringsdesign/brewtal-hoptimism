@@ -8,11 +8,11 @@ function AddKeg() {
     margin: '20px auto',
     height: '70%',
     justifyContent: 'space-between'
-  }
+  };
   const inputStyles = {
     height: '25px',
     margin: '10px 0'
-  }
+  };
 
   return(
     <div>

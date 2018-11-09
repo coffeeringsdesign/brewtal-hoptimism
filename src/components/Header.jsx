@@ -9,7 +9,7 @@ function Header() {
     position: 'relative',
     backgroundColor: '#FFFFFF',
     height: '20%'
-  }
+  };
   const logoStyles = {
     marginRight: 'auto',
     marginLeft: 'auto',
@@ -20,14 +20,14 @@ function Header() {
     flexDirection: 'column',
     borderBottom: '2px #D16655 solid',
     textAlign: 'center'
-  }
+  };
   const adminLinkStyles = {
     position: 'absolute',
     right: '10',
     top: '6',
     color: '#D8D8D8',
     textDecoration: 'none'
-  }
+  };
   const logoImgStyles = {
     marginTop: '20px',
     marginRight: 'auto',
@@ -35,8 +35,7 @@ function Header() {
     width: '50%',
     display: 'flex',
     justifyContent: 'center',
-
-  }
+  };
 
   return(
     <div style={headerStyles}>
