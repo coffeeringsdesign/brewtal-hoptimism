@@ -49,6 +49,7 @@ A Tap Room site built with React. The same site functionality was built with Ang
 
 ## Unforeseen Issues and Questions
 1. A ghost keg has appeared. While having a masterkeg array consisting of 6 kegs, a 7th blank keg appears at the bottom of the keg list component. Can't locate the cause.
+2. Began trying to get the ABV to change color according to percentage. Not sure of where to add the function yet.
 
 
 ## Setup/Installation Requirements
