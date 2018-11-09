@@ -7,6 +7,7 @@ import Admin from './Admin';
 function App(){
   return (
     <div>
+      <Header/>
       <Switch>
         <Route exact path='/' component={Visitor} />
         <Route path='/admin' component={Admin} />

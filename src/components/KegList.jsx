@@ -2,6 +2,7 @@ import React from 'react';
 import Keg from './Keg';
 import rpm from '../assets/images/rpm.jpg';
 import hopVenom from '../assets/images/hopvenom.jpeg';
+import barleyBrown from '../assets/images/barleybrown.png';
 
 const masterTappedKegList = [
   {
@@ -13,7 +14,7 @@ const masterTappedKegList = [
     abv: '6.5%',
     ibu: '50',
     price: '$7',
-    pintCount: '',
+    pintCount: '101',
     region: 'local'
   },
   {
@@ -27,7 +28,19 @@ const masterTappedKegList = [
     price: '$8',
     pintCount: '86',
     region: 'local'
-  }
+  },
+  {
+    tapped: true,
+    name: 'Pallet Jack',
+    brewery: "Barley Brown's",
+    img: barleyBrown,
+    style: 'IPA',
+    abv: '7%',
+    ibu: '63',
+    price: '$7',
+    pintCount: '34',
+    region: 'local'
+  },
 ]
 
 function KegList() {
@@ -36,12 +49,10 @@ function KegList() {
     marginRight: 'auto',
     marginTop: '50px',
     width: '80%',
-    backgroundColor: 'red'
   }
 
   return(
-    <div>
-      <h3 style={kegListStyles}>keg list here</h3>
+    <div style={kegListStyles}>
       {masterTappedKegList.map((beer, index) =>
       <Keg tapped={beer.tapped}
         name={beer.name}
@@ -52,7 +63,8 @@ function KegList() {
         ibu={beer.ibu}
         price={beer.price}
         pintCount={beer.pintCount}
-        region={beer.region}/>
+        region={beer.region}
+        key={index}/>
         )}
         <Keg/>
     </div>

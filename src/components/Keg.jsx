@@ -7,22 +7,40 @@ function Keg(props) {
     marginLeft: 'auto',
     marginRight: 'auto',
     marginTop: '50px',
-    width: '60%',
-    backgroundColor: 'red',
+    width: '75%',
+    height: '300px',
+    color: '#797F7F',
     flexDirection: 'row',
-    justifyContent: 'space-around',
-    textAlign: 'left'
+    textAlign: 'left',
+    border: '2px #D16655 solid',
+    borderRadius: '5px',
+    alignItems: 'center',
+    justifyContent: 'center'
   }
   const kegInformationStyles = {
     display: 'flex',
     flexDirection: 'column',
-    alignContent: 'space-around'
+    alignContent: 'space-around',
+    marginLeft: '3em',
+    marginRight: '1em',
+    width: '200px'
+  }
+  const beerLogoStyles = {
+    width: '175px',
+  }
+  const kegBreakdownStyles = {
+    textAlign: 'center',
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'space-around',
+    height: '200px',
+    width: '100px'
   }
 
   return(
     <div style={kegStyles}>
       <div>
-        <img src={props.img}/>
+        <img style={beerLogoStyles} src={props.img}/>
       </div>
       <div>
         <div style={kegInformationStyles}>
@@ -31,9 +49,20 @@ function Keg(props) {
           <h3>{props.style}</h3>
           <h4>ABV: {props.abv}</h4>
           <h4>IBU: {props.ibu}</h4>
-          <h4>Price: {props.price}</h4>
-          <h4>Pints Left in Keg: {props.pintCount}</h4>
-          <h4>Region: {props.region}</h4>
+        </div>
+      </div>
+      <div style={kegBreakdownStyles}>
+        <div>
+          <h4>Price:</h4>
+          <h2>{props.price}</h2>
+        </div>
+        <div>
+          <h4>Pints Left:</h4>
+          <h2>{props.pintCount}</h2>
+        </div>
+        <div>
+          <h4>Region:</h4>
+          <h2>{props.region}</h2>
         </div>
       </div>
     </div>

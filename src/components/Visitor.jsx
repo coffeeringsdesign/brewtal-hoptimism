@@ -5,7 +5,6 @@ import KegList from './KegList';
 function Visitor() {
   return(
     <div>
-      <Header/>
       <KegList/>
     </div>
   );
