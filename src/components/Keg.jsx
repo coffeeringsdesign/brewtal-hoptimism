@@ -36,7 +36,7 @@ function Keg(props) {
     height: '200px',
     width: '100px'
   }
-
+  console.log(props.index);
   return(
     <div style={kegStyles}>
       <div>
@@ -70,15 +70,15 @@ function Keg(props) {
 }
 
 Keg.propTypes = {
-  tapped: PropTypes.bool.isRequired,
-  name: PropTypes.string.isRequired,
-  brewery: PropTypes.string.isRequired,
-  style: PropTypes.string.isRequired,
-  abv: PropTypes.string.isRequired,
-  ibu: PropTypes.number.isRequired,
-  price: PropTypes.string.isRequired,
-  pintCount: PropTypes.number.isRequired,
-  region: PropTypes.string.isRequired
+  tapped: PropTypes.bool,
+  name: PropTypes.string,
+  brewery: PropTypes.string,
+  style: PropTypes.string,
+  abv: PropTypes.string,
+  ibu: PropTypes.string,
+  price: PropTypes.string,
+  pintCount: PropTypes.number,
+  region: PropTypes.string
 }
 
 export default Keg;

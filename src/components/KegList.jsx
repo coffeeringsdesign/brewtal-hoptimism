@@ -3,6 +3,8 @@ import Keg from './Keg';
 import rpm from '../assets/images/rpm.jpg';
 import hopVenom from '../assets/images/hopvenom.jpeg';
 import barleyBrown from '../assets/images/barleybrown.png';
+import luckyLab from '../assets/images/luckylab.png';
+import buoy from '../assets/images/buoy.png';
 
 const masterTappedKegList = [
   {
@@ -14,7 +16,19 @@ const masterTappedKegList = [
     abv: '6.5%',
     ibu: '50',
     price: '$7',
-    pintCount: '101',
+    pintCount: 101,
+    region: 'local'
+  },
+  {
+    tapped: true,
+    name: 'Super Dog',
+    brewery: 'Lucky Labrador',
+    img: luckyLab,
+    style: 'IPA',
+    abv: '6.5%',
+    ibu: '90+',
+    price: '$8',
+    pintCount: 55,
     region: 'local'
   },
   {
@@ -26,7 +40,7 @@ const masterTappedKegList = [
     abv: '9%',
     ibu: '60',
     price: '$8',
-    pintCount: '86',
+    pintCount: 86,
     region: 'local'
   },
   {
@@ -38,16 +52,40 @@ const masterTappedKegList = [
     abv: '7%',
     ibu: '63',
     price: '$7',
-    pintCount: '34',
+    pintCount: 34,
     region: 'local'
   },
-]
+  {
+    tapped: true,
+    name: 'Helles',
+    brewery: 'Buoy Beer Co.',
+    img: buoy,
+    style: 'German Lager',
+    abv: '5.3%',
+    ibu: '19',
+    price: '$6',
+    pintCount: 98,
+    region: 'local'
+  },
+  {
+    tapped: true,
+    name: 'NW Red Ale',
+    brewery: 'Buoy Beer Co.',
+    img: buoy,
+    style: 'Red Ale',
+    abv: '6.7%',
+    ibu: '75',
+    price: '$7',
+    pintCount: 53,
+    region: 'local'
+  }
+];
 
 function KegList() {
   const kegListStyles ={
     marginLeft: 'auto',
     marginRight: 'auto',
-    marginTop: '50px',
+    marginTop: '20px',
     width: '80%',
   }
 
