@@ -8,13 +8,13 @@ function Header() {
     width: '100%',
     position: 'relative',
     backgroundColor: '#FFFFFF',
-    height: '150px'
+    height: '20%'
   }
   const logoStyles = {
     marginRight: 'auto',
     marginLeft: 'auto',
     width: '90%',
-    height: '185px',
+    height: '20%',
     display: 'flex',
     justifyContent: 'center',
     flexDirection: 'column',
@@ -32,7 +32,7 @@ function Header() {
     marginTop: '20px',
     marginRight: 'auto',
     marginLeft: 'auto',
-    height: '150px',
+    width: '50%',
     display: 'flex',
     justifyContent: 'center',
 

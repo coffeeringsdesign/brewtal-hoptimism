@@ -1,9 +1,13 @@
 import React from 'react';
 import Header from './Header';
+import KegList from './KegList';
 
 function Visitor() {
   return(
-    <Header/>
+    <div>
+      <Header/>
+      <KegList/>
+    </div>
   );
 }
 
