@@ -1,0 +1,9 @@
+function abvColorChange(props){
+  if ({props.abv} >= 9){
+    return "#C65543";
+  } else if (({props.abv} <=4) && ({props.abv} <=8)) {
+    return "#D16655";
+  } else {
+    return "#F99E90";
+  }
+}

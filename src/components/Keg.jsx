@@ -36,8 +36,8 @@ function Keg(props) {
     height: '200px',
     width: '100px'
   }
-  console.log(props.index);
   return(
+
     <div style={kegStyles}>
       <div>
         <img style={beerLogoStyles} src={props.img}/>
@@ -47,7 +47,7 @@ function Keg(props) {
           <h1>{props.name}</h1>
           <h2>{props.brewery}</h2>
           <h3>{props.style}</h3>
-          <h4>ABV: {props.abv}</h4>
+          <h4>ABV: {props.abv}%</h4>
           <h4>IBU: {props.ibu}</h4>
         </div>
       </div>
@@ -69,12 +69,13 @@ function Keg(props) {
   );
 }
 
+
 Keg.propTypes = {
   tapped: PropTypes.bool,
   name: PropTypes.string,
   brewery: PropTypes.string,
   style: PropTypes.string,
-  abv: PropTypes.string,
+  abv: PropTypes.number,
   ibu: PropTypes.string,
   price: PropTypes.string,
   pintCount: PropTypes.number,
