@@ -4,8 +4,11 @@ import AddKeg from './AddKeg';
 import EditKeg from './EditKeg';
 
 function Admin() {
+  const adminContainerStyles = {
+    marginBottom: '70px'
+  }
   return(
-    <div>
+    <div style={adminContainerStyles}>
       <KegList/>
       <EditKeg/>
       <AddKeg/>

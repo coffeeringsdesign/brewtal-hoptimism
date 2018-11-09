@@ -87,7 +87,8 @@ function KegList() {
     marginRight: 'auto',
     marginTop: '20px',
     width: '80%',
-  }
+    marginBottom: '70px'
+    }
 
   return(
     <div style={kegListStyles}>
