@@ -48,6 +48,8 @@ A Tap Room site built with React. The same site functionality was built with Ang
 * Admin wants to be able to click a button to indicate a sold pint. That button then removes a pint from that kegs pint count.
 
 ## Unforeseen Issues and Questions
+1. A ghost keg has appeared. While having a masterkeg array consisting of 6 kegs, a 7th blank keg appears at the bottom of the keg list component. Can't locate the cause.
+
 
 ## Setup/Installation Requirements
 Using Command Line:
