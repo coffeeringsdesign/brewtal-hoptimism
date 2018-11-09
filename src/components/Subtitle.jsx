@@ -3,7 +3,7 @@ import React from 'react';
 function Subtitle() {
   const subtitleStyles ={
     color: '#797F7F',
-    marginBottom: '20px'
+    marginBottom: '20px',
   }
 
   return(

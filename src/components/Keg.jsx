@@ -36,6 +36,9 @@ function Keg(props) {
     height: '200px',
     width: '100px'
   }
+  const abvColorStyle = {
+    color: 'red'
+  }
   return(
 
     <div style={kegStyles}>
@@ -44,10 +47,11 @@ function Keg(props) {
       </div>
       <div>
         <div style={kegInformationStyles}>
+
           <h1>{props.name}</h1>
           <h2>{props.brewery}</h2>
-          <h3>{props.style}</h3>
-          <h4>ABV: {props.abv}%</h4>
+          <h3>Style: {props.style}</h3>
+          <h4 style={abvColorStyle}>ABV: {props.abv}%</h4>
           <h4>IBU: {props.ibu}</h4>
         </div>
       </div>
@@ -68,6 +72,7 @@ function Keg(props) {
     </div>
   );
 }
+
 
 
 Keg.propTypes = {
