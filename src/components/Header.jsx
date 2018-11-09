@@ -1,25 +1,41 @@
 import React from 'react';
 import hoptimistsLogo from '../assets/images/HoptimistsLogo.png';
 import { Link } from 'react-router-dom';
+import Subtitle from './Subtitle';
 
 function Header() {
   const headerStyles = {
+    width: '100%',
     position: 'relative',
     backgroundColor: '#FFFFFF',
-    marginBottom: '1px lightgrey solid',
     height: '150px'
   }
   const logoStyles = {
-    width: '100%',
+    marginRight: 'auto',
+    marginLeft: 'auto',
+    width: '90%',
+    height: '185px',
     display: 'flex',
     justifyContent: 'center',
-  }
-  const logoImgStyles = {
-    height: '85%'
+    flexDirection: 'column',
+    borderBottom: '2px #D16655 solid',
+    textAlign: 'center'
   }
   const adminLinkStyles = {
-    float: 'right',
-    color: 'red'
+    position: 'absolute',
+    right: '10',
+    top: '6',
+    color: '#D8D8D8',
+    textDecoration: 'none'
+  }
+  const logoImgStyles = {
+    marginTop: '20px',
+    marginRight: 'auto',
+    marginLeft: 'auto',
+    height: '150px',
+    display: 'flex',
+    justifyContent: 'center',
+
   }
 
   return(
@@ -27,6 +43,7 @@ function Header() {
       <Link style={adminLinkStyles} to="/admin">admin</Link>
       <div style={logoStyles}>
         <Link to="/"><img style={logoImgStyles} src={hoptimistsLogo}/></Link>
+        <Subtitle/>
       </div>
     </div>
   );

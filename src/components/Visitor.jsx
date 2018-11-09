@@ -1,8 +1,9 @@
 import React from 'react';
+import Header from './Header';
 
 function Visitor() {
   return(
-    <p>HERE BE BEER</p>
+    <Header/>
   );
 }
 
