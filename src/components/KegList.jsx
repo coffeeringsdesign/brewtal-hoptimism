@@ -5,6 +5,10 @@ import hopVenom from '../assets/images/hopvenom.jpeg';
 import barleyBrown from '../assets/images/barleybrown.png';
 import luckyLab from '../assets/images/luckylab.png';
 import buoy from '../assets/images/buoy.png';
+import fatTire from '../assets/images/fatTire.jpeg';
+import citradelic from '../assets/images/citradelic.jpg';
+import furious from '../assets/images/furious.jpg';
+import sculpin from '../assets/images/sculpin.jpg';
 
 const masterTappedKegList = [
   {
@@ -21,6 +25,30 @@ const masterTappedKegList = [
   },
   {
     tapped: true,
+    name: 'Sculpin',
+    brewery: 'Ballast Point',
+    img: sculpin,
+    style: 'IPA',
+    abv: 7,
+    ibu: '70',
+    price: '$10',
+    pintCount: 23,
+    region: 'national'
+  },
+  {
+    tapped: true,
+    name: 'Furious',
+    brewery: 'Surly Brewing Co',
+    img: furious,
+    style: 'IPA',
+    abv: 6.7,
+    ibu: 'high',
+    price: '$9',
+    pintCount: 64,
+    region: 'national'
+  },
+  {
+    tapped: true,
     name: 'Super Dog',
     brewery: 'Lucky Labrador',
     img: luckyLab,
@@ -30,6 +58,18 @@ const masterTappedKegList = [
     price: '$8',
     pintCount: 55,
     region: 'local'
+  },
+  {
+    tapped: true,
+    name: 'Citradelic',
+    brewery: 'New Belgium',
+    img: citradelic,
+    style: 'Tangerine IPA',
+    abv: 6,
+    ibu: '50',
+    price: '$7',
+    pintCount: 1002,
+    region: 'national'
   },
   {
     tapped: true,
@@ -66,6 +106,18 @@ const masterTappedKegList = [
     price: '$6',
     pintCount: 98,
     region: 'local'
+  },
+  {
+    tapped: true,
+    name: 'Fat Tire',
+    brewery: 'New Belgium',
+    img: fatTire,
+    style: 'Amber Ale',
+    abv: 5.2,
+    ibu: '22',
+    price: '$6',
+    pintCount: 45,
+    region: 'national'
   },
   {
     tapped: true,

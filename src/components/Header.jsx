@@ -18,7 +18,7 @@ function Header() {
     display: 'flex',
     justifyContent: 'center',
     flexDirection: 'column',
-    borderBottom: '2px #D16655 solid',
+    borderBottom: '3px #87A06B solid',
     textAlign: 'center'
   };
   const adminLinkStyles = {

@@ -12,7 +12,7 @@ function Keg(props) {
     color: '#797F7F',
     flexDirection: 'row',
     textAlign: 'left',
-    border: '2px #D16655 solid',
+    border: '3px #87A06B solid',
     borderRadius: '5px',
     alignItems: 'center',
     justifyContent: 'center'
