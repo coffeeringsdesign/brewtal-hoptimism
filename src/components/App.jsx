@@ -5,6 +5,12 @@ import Visitor from './Visitor';
 import Admin from './Admin';
 
 function App(){
+  const bottomBarStyles ={
+    width: '100%',
+    backgroundColor: '#87A06B',
+    height: '40px'
+  };
+  
   return (
     <div>
       <Header/>
@@ -12,6 +18,7 @@ function App(){
         <Route exact path='/' component={Visitor} />
         <Route path='/admin' component={Admin} />
       </Switch>
+      <div style={bottomBarStyles}></div>
     </div>
   );
 }

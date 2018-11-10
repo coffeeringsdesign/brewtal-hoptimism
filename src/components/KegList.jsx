@@ -157,7 +157,6 @@ function KegList() {
           region={beer.region}
           key={index}/>
       )}
-      <Keg/>
     </div>
   );
 }

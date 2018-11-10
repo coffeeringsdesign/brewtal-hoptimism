@@ -8,7 +8,7 @@ function Subtitle() {
 
   return(
     <div>
-      <h3 style={subtitleStyles}>current taps 11/9/18</h3>
+      <h3 style={subtitleStyles}>current taps</h3>
     </div>
   );
 }
