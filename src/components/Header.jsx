@@ -5,10 +5,12 @@ import Subtitle from './Subtitle';
 
 function Header() {
   const headerStyles = {
-    width: '100%',
+    width: '97%',
     position: 'relative',
     backgroundColor: '#FFFFFF',
-    height: '20%'
+    height: '20%',
+    margin: '1.3em auto',
+    filter: 'drop-shadow(0 0 0.5rem black)'
   };
   const logoStyles = {
     marginRight: 'auto',
@@ -18,7 +20,6 @@ function Header() {
     display: 'flex',
     justifyContent: 'center',
     flexDirection: 'column',
-    borderBottom: '3px #87A06B solid',
     textAlign: 'center'
   };
   const adminLinkStyles = {

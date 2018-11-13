@@ -7,7 +7,7 @@ function Keg(props) {
     marginLeft: 'auto',
     marginRight: 'auto',
     marginTop: '50px',
-    width: '75%',
+    width: '65%',
     height: '300px',
     color: '#797F7F',
     flexDirection: 'row',
@@ -15,7 +15,9 @@ function Keg(props) {
     border: '3px #87A06B solid',
     borderRadius: '5px',
     alignItems: 'center',
-    justifyContent: 'center'
+    justifyContent: 'center',
+    backgroundColor: 'white',
+    filter: 'drop-shadow(0 0 0.5rem #797F7F)'
   };
   const kegInformationStyles = {
     display: 'flex',

@@ -137,9 +137,12 @@ function KegList() {
   const kegListStyles ={
     marginLeft: 'auto',
     marginRight: 'auto',
-    marginTop: '20px',
-    width: '80%',
-    marginBottom: '70px'
+    paddingTop: '20px',
+    width: '97%',
+    paddingBottom: '70px',
+    backgroundColor: 'white',
+    marginBottom: '25px',
+    filter: 'drop-shadow(0 0 0.5rem black)'
   };
 
   return(
