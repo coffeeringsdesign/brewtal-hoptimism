@@ -63,6 +63,7 @@ on 2nd Friday Refactor adding:
 1. A ghost keg has appeared. While having a masterkeg array consisting of 6 kegs, a 7th blank keg appears at the bottom of the keg list component. Can't locate the cause. Update: fixed.
 2. Began trying to get the ABV to change color according to percentage. Not sure of where to add the function yet.
 3. I'm not 100% sure that my choice of state placement/heirarchy of the bottom of the tree layout. I can't foresee any real issues arrising but I am unsure if it is best practices.
+4. Having issues locating where to place a function to conditionally alter css values.
 
 
 ## Setup/Installation Requirements
