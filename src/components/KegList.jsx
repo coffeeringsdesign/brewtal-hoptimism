@@ -12,7 +12,7 @@ import sculpin from '../assets/images/sculpin.jpg';
 
 class KegList extends React.Component {
 
-  constructor() {
+  constructor(props) {
     super();
     this.state = {
       tapped: true,
@@ -184,7 +184,7 @@ class KegList extends React.Component {
             filter: drop-shadow(0 0 0.5rem black);
           }
         `}</style>
-      {this.state.masterTappedKegList.map((beer, index, abvColorChange) =>
+        {this.state.masterTappedKegList.map((beer, index, abvColorChange) =>
           <Keg tapped={beer.tapped}
             name={beer.name}
             brewery={beer.brewery}
@@ -195,7 +195,8 @@ class KegList extends React.Component {
             price={beer.price}
             pintCount={beer.pintCount}
             region={beer.region}
-            key={index}/>
+            key={index}
+            onNewKegAddition={this.handleSendingNewKegToList}/>
         )}
       </div>
     );

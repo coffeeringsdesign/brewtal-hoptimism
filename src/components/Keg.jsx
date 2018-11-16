@@ -5,11 +5,11 @@ function Keg(props) {
 
   function abvColorChange(props, abvColorClass) {
     if (props.abv >= 9){
-     let abvColorClass = "#C65543";
+      let abvColorClass = '#C65543';
     } else if ((props.abv <=4) && (props.abv <=8)) {
-     let abvColorClass = "#D16655";
+      let abvColorClass = '#D16655';
     } else {
-     let abvColorClass = "#F99E90";
+      let abvColorClass = '#F99E90';
     }
     return abvColorClass;
     console.log(abvColorClass);

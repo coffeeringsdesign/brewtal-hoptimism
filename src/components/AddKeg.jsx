@@ -1,6 +1,16 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
-function AddKeg(props) {
+function AddKeg(props, { onNewKegAddition }) {
+  let _name = null;
+  let _brewery = null;
+  let _style = null;
+  let _abv = null;
+  let _ibu = null;
+  let _price = null;
+  let _pintCount = null;
+  let _region = null;
+
   const addNewKegFormStyles = {
     display: 'flex',
     flexDirection: 'column',
@@ -9,14 +19,15 @@ function AddKeg(props) {
     height: '70%',
     justifyContent: 'space-between'
   };
+
   const inputStyles = {
     height: '25px',
     margin: '10px 0'
   };
 
   function handleAddingNewKegSubmit(event) {
-    event.preventDefault()
-    props.onNewKegAddition({name: _name.value, brewery: _brewery.value, style: _style.value, abv: _abv.value, ibu: _ibu.value, price: _price.value, pintCount: _printCount.value, region: _region.value});
+    event.preventDefault();
+    props.onNewKegAddition({name: _name.value, brewery: _brewery.value, style: _style.value, abv: _abv.value, ibu: _ibu.value, price: _price.value, pintCount: _pintCount.value, region: _region.value});
     _name.value = '';
     _brewery.value = '';
     _style.value = '';
@@ -42,41 +53,41 @@ function AddKeg(props) {
           style={inputStyles}
           type='text'
           id='brewery'
-          ref={(input) => {brewery = input;}}/>
+          ref={(input) => {_brewery = input;}}/>
         <label>Enter Style:</label>
         <input
           style={inputStyles}
           type='text'
           id='style'
-          ref={(input) => {style = input;}}/>
+          ref={(input) => {_style = input;}}/>
         <label>Enter ABV:</label>
         <input
           style={inputStyles}
           type='text'
           id='abv'
-          ref={(input) => {abv = input;}}/>
+          ref={(input) => {_abv = input;}}/>
         <label>Enter IBU:</label>
         <input
           style={inputStyles}
           type='text'
           id='ibu'
-          ref={(input) => {ibu = input;}}/>
+          ref={(input) => {_ibu = input;}}/>
         <label>Enter Price:</label>
         <input
           style={inputStyles}
           type='text'
           id='price'
-          ref={(input) => {price = input;}}/>
+          ref={(input) => {_price = input;}}/>
         <label>Enter Pint Count:</label>
         <input
           style={inputStyles}
           type='number'
           id='pintCount'
-          ref={(input) => {pintCount = input;}}/>
+          ref={(input) => {_pintCount = input;}}/>
         <label>Region:</label>
         <select
           style={inputStyles}
-          ref={(select) => {region = select;}}/>>
+          ref={(select) => {_region = select;}}>
           <option value='local'> Local Region </option>
           <option value='local'> National Region </option>
           <option value='local'> International Region </option>
@@ -88,7 +99,7 @@ function AddKeg(props) {
 }
 
 AddKeg.propTypes = {
-  onNewKegAddition: PropTypes:func;
-}
+  onNewKegAddition: PropTypes.func
+};
 
 export default AddKeg;
