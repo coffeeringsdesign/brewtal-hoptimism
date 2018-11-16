@@ -24,8 +24,8 @@ function Header() {
   };
   const adminLinkStyles = {
     position: 'absolute',
-    right: '10',
-    top: '6',
+    right: '10px',
+    top: '6px',
     color: '#D8D8D8',
     textDecoration: 'none'
   };

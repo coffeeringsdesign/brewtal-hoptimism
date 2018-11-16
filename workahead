@@ -1,4 +1,4 @@
-function abvColorChange(props){
+abvColorChange(){
   if ({props.abv} >= 9){
     let abvColorClass = "#C65543";
   } else if (({props.abv} <=4) && ({props.abv} <=8)) {

@@ -13,7 +13,7 @@ import sculpin from '../assets/images/sculpin.jpg';
 class KegList extends React.Component {
 
   constructor() {
-    super()
+    super();
     this.state = {
       tapped: true,
       lowPint: false,
@@ -150,7 +150,19 @@ class KegList extends React.Component {
         }
       ]
     };
+    // this.abvColorChange = this.abvColorChange.bind(this);
   }
+
+  // abvColorChange(abvColorClass) {
+  //   if (this.state.masterTappedKegList.abv >= 9){
+  //     return abvColorClass = "#C65543";
+  //   } else if ((this.state.masterTappedKegList.abv <=4) && (this.state.masterTappedKegList.abv <=8)) {
+  //     return abvColorClass = "#D16655";
+  //   } else {
+  //     return abvColorClass = "#F99E90";
+  //   }
+  // }
+
 
   render(){
     return(
@@ -167,7 +179,7 @@ class KegList extends React.Component {
             filter: drop-shadow(0 0 0.5rem black);
           }
         `}</style>
-      {this.state.masterTappedKegList.map((beer, index) =>
+      {this.state.masterTappedKegList.map((beer, index, abvColorChange) =>
           <Keg tapped={beer.tapped}
             name={beer.name}
             brewery={beer.brewery}
@@ -178,7 +190,8 @@ class KegList extends React.Component {
             price={beer.price}
             pintCount={beer.pintCount}
             region={beer.region}
-            key={index}/>
+            key={index}
+            abvColorChange={abvColorChange}/>
         )}
       </div>
     );
