@@ -19,6 +19,8 @@ A Tap Room site built with React. The same site functionality was built with Ang
 | The base installation contains more of the modules and plugins needed for the full project | The base installation is more barebones and additional modules and plugins are made by 3rd party suppliers |
 | Uses Typescript | Uses Javascript and JSX |
 | A Component has 4 documents that are needed for TS, HTML, Testing, & Styling | A Components JS (or JSX), HTML, & Styling is included in a single document |
+| These 4 pages do allow for a nice separation of these things and an obvious place for them to reside | Having them all in a single spot allows them all to be referred back to easier but where to place them becomes a bit more complicated |
+| Changing/Sending information seems much more complicated and convoluted | Changing/Sending information seems much more simple and intuitive |
 
 ## Planning and Site layout
 
@@ -33,8 +35,16 @@ A Tap Room site built with React. The same site functionality was built with Ang
 * Pints Remaining
 * Region (local, national, internation)
 
+on 2nd Friday Refactor adding:
+* Tapped: Boolean
+* Low On Pints: Boolean
+
 ##### Component Structure:
 ![The Hoptimists component structure](/HoptimistsComponents.png)
+
+##### Component Tree:
+![The Hoptimists component tree](/HoptimistsComponentTree.png)
+
 
 ## User Needs
 
@@ -43,13 +53,13 @@ A Tap Room site built with React. The same site functionality was built with Ang
 * Admin wants to be able to fill out a form to add a new keg.
 * Admin wants to be able to edit an added keg via another form.
 * Admin and visitor wants to be able to see an approximation of how many pints are left in a keg.
-* Admin and visitor wants to be able to see an approximation of how many pints are left in a keg.
 * Admin wants to be able to see any keg that has less than 10 pints easily.
 * Admin wants to be able to click a button to indicate a sold pint. That button then removes a pint from that kegs pint count.
 
 ## Unforeseen Issues and Questions
 1. A ghost keg has appeared. While having a masterkeg array consisting of 6 kegs, a 7th blank keg appears at the bottom of the keg list component. Can't locate the cause. Update: fixed.
 2. Began trying to get the ABV to change color according to percentage. Not sure of where to add the function yet.
+3. I'm not 100% sure that my choice of state placement/heirarchy of the bottom of the tree layout. I can't foresee any real issues arrising but I am unsure if it is best practices. 
 
 
 ## Setup/Installation Requirements
@@ -59,8 +69,8 @@ Using Command Line:
 3. ``cd Desktop `` to navigate to your desktop
 4. ``cd the-hoptimists`` to enter the site folder
 8. ``npm install`` to install all webpack dependencies
-9. ``npm run start`` this will webpack and immediate pop open the site on your brower. I recommend Chrome.
-14. I recommend Atom to edit any html, javascript, or sass.
+9. ``npm run start`` this will webpack and immediate pop open the site on your browser. I recommend Chrome.
+10. I recommend Atom to edit any html, javascript, or sass.
 
 ## Contribution Requirements
 
@@ -76,6 +86,8 @@ Using Command Line:
 * Babel
 * Webpack
 * ESLint
+* JSX
+* npm
 
 ## Suuport & Contact Details
 
