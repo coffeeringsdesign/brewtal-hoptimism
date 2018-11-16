@@ -162,7 +162,12 @@ class KegList extends React.Component {
   //     return abvColorClass = "#F99E90";
   //   }
   // }
-
+  handleSendingNewKegToList() {
+    let newMasterTappedKegList = Object.assign({}, this.state.masterTappedKegList, {
+      [newKeg.id]: newTicket
+    });
+    this.setState({masterTappedKegList: newMasterTappedKegList});
+  }
 
   render(){
     return(
@@ -190,8 +195,7 @@ class KegList extends React.Component {
             price={beer.price}
             pintCount={beer.pintCount}
             region={beer.region}
-            key={index}
-            abvColorChange={abvColorChange}/>
+            key={index}/>
         )}
       </div>
     );

@@ -69,7 +69,7 @@ function Keg(props) {
           <h1>{props.name}</h1>
           <h2>{props.brewery}</h2>
           <h3>Style: {props.style}</h3>
-          <h4 abvColorChange={this.abvColorChange} className='abvColorStyle' style={abvColorStyle}>ABV: {props.abv}%
+          <h4 abvColorChange={this.abvColorChange}>ABV: {props.abv}%
             <style jsx>{`
                 .abvColorStyle {
                   {abvColorClass};
