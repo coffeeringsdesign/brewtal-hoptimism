@@ -44,7 +44,10 @@ on 2nd Friday Refactor adding:
 
 ##### Component Tree:
 ![The Hoptimists component tree](/HoptimistsComponentTree.png)
-
+###### Changes made to above Tree upon refactor:
+* I originally expected Add Keg & Edit Keg to come directly off of Admin component. Then Keg List would be a shared child of Admin and Visitor and it have a single child of Keg.
+* However, getting to know state a bit better I believe the best choice is to make Keg List stateful since it includes all the kegs details. Having Add Keg and Edit Keg now siblings with Keg (displays info).
+* All Changes will now happen on Add Keg & Edit Keg, travel up to update the stateful Keg List and then back down to display in Keg.
 
 ## User Needs
 
@@ -59,7 +62,7 @@ on 2nd Friday Refactor adding:
 ## Unforeseen Issues and Questions
 1. A ghost keg has appeared. While having a masterkeg array consisting of 6 kegs, a 7th blank keg appears at the bottom of the keg list component. Can't locate the cause. Update: fixed.
 2. Began trying to get the ABV to change color according to percentage. Not sure of where to add the function yet.
-3. I'm not 100% sure that my choice of state placement/heirarchy of the bottom of the tree layout. I can't foresee any real issues arrising but I am unsure if it is best practices. 
+3. I'm not 100% sure that my choice of state placement/heirarchy of the bottom of the tree layout. I can't foresee any real issues arrising but I am unsure if it is best practices.
 
 
 ## Setup/Installation Requirements
