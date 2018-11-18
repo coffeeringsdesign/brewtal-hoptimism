@@ -163,7 +163,8 @@ class KegList extends React.Component {
   //   }
   // }
   handleSendingNewKegToList() {
-    let newMasterTappedKegList = Object.assign({}, this.state.masterTappedKegList, {
+    let newTappedKegList = this.state.masterTappedKegList.slice();
+    let newMasterTappedKegList = Object.assign({}, newTappedKegList) {
       [newKeg.id]: newTicket
     });
     this.setState({masterTappedKegList: newMasterTappedKegList});
@@ -171,7 +172,7 @@ class KegList extends React.Component {
 
   handleAddingNewKegSubmit(event) {
     event.preventDefault();
-    props.onNewKegAddition({name: _name.value, brewery: _brewery.value, style: _style.value, abv: _abv.value, ibu: _ibu.value, price: _price.value, pintCount: _pintCount.value, region: _region.value});
+    this.state.onNewKegAddition({name: _name.value, brewery: _brewery.value, style: _style.value, abv: _abv.value, ibu: _ibu.value, price: _price.value, pintCount: _pintCount.value, region: _region.value});
     _name.value = '';
     _brewery.value = '';
     _style.value = '';
@@ -213,7 +214,7 @@ class KegList extends React.Component {
             key={index}
           />
         )}
-        <form>
+        <form onSubmit={this.handleAddingNewKegSubmit}>
           <h1>Add Keg</h1>
           <label>Enter Keg name:</label>
           <input
@@ -264,5 +265,12 @@ class KegList extends React.Component {
     );
   }
 }
-// onSubmit={handleAddingNewKegSubmit}
+
+// adding submit function to top of form
+///handleAddingNewKegSubmit isn't being called trying adding this. to function XX - removed
+// trying adding this. to call of function == page loads again - added console log to see if connection to function works
+//handleAddingNewKegSubmit function is being called! but not correctly connecting with onNewKegAddition
+//first change props to this
+//second change to this.state.
+
 export default KegList;
