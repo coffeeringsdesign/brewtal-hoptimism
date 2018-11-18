@@ -169,6 +169,21 @@ class KegList extends React.Component {
     this.setState({masterTappedKegList: newMasterTappedKegList});
   }
 
+  handleAddingNewKegSubmit(event) {
+    event.preventDefault();
+    props.onNewKegAddition({name: _name.value, brewery: _brewery.value, style: _style.value, abv: _abv.value, ibu: _ibu.value, price: _price.value, pintCount: _pintCount.value, region: _region.value});
+    _name.value = '';
+    _brewery.value = '';
+    _style.value = '';
+    _abv.value = '';
+    _ibu.value = '';
+    _price.value = '';
+    _pintCount.value = '';
+    _region.value = '';
+  }
+
+
+
   render(){
     return(
       <div className="kegListStyles">
@@ -196,11 +211,58 @@ class KegList extends React.Component {
             pintCount={beer.pintCount}
             region={beer.region}
             key={index}
-            onNewKegAddition={this.handleSendingNewKegToList}/>
+          />
         )}
+        <form>
+          <h1>Add Keg</h1>
+          <label>Enter Keg name:</label>
+          <input
+            type='text'
+            id='name'
+            ref={(input) => {_name = input;}}/>
+          <label>Enter Brewery name:</label>
+          <input
+            type='text'
+            id='brewery'
+            ref={(input) => {_brewery = input;}}/>
+          <label>Enter Style:</label>
+          <input
+            type='text'
+            id='style'
+            ref={(input) => {_style = input;}}/>
+          <label>Enter ABV:</label>
+          <input
+            type='text'
+            id='abv'
+            ref={(input) => {_abv = input;}}/>
+          <label>Enter IBU:</label>
+          <input
+            type='text'
+            id='ibu'
+            ref={(input) => {_ibu = input;}}/>
+          <label>Enter Price:</label>
+          <input
+            type='text'
+            id='price'
+            ref={(input) => {_price = input;}}/>
+          <label>Enter Pint Count:</label>
+          <input
+            type='number'
+            id='pintCount'
+            ref={(input) => {_pintCount = input;}}/>
+          <label>Region:</label>
+          <select
+
+            ref={(select) => {_region = select;}}>
+            <option value='local'> Local Region </option>
+            <option value='local'> National Region </option>
+            <option value='local'> International Region </option>
+          </select>
+          <button stype='submit'>Add Keg</button>
+        </form>
       </div>
     );
   }
 }
-
+// onSubmit={handleAddingNewKegSubmit}
 export default KegList;
