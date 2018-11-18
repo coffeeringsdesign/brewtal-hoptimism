@@ -9,6 +9,7 @@ import fatTire from '../assets/images/fatTire.jpeg';
 import citradelic from '../assets/images/citradelic.jpg';
 import furious from '../assets/images/furious.jpg';
 import sculpin from '../assets/images/sculpin.jpg';
+import { v4 } from 'uuid';
 
 class KegList extends React.Component {
 
@@ -150,7 +151,7 @@ class KegList extends React.Component {
         }
       ]
     };
-    // this.abvColorChange = this.abvColorChange.bind(this);
+    this.handleAddingNewKegSubmit = this.handleAddingNewKegSubmit.bind(this);
   }
 
   // abvColorChange(abvColorClass) {
@@ -162,17 +163,19 @@ class KegList extends React.Component {
   //     return abvColorClass = "#F99E90";
   //   }
   // }
-  handleSendingNewKegToList() {
-    let newTappedKegList = this.state.masterTappedKegList.slice();
-    let newMasterTappedKegList = Object.assign({}, newTappedKegList) {
-      [newKeg.id]: newTicket
+  handleSendingNewKegToList(key) {
+    let newTappedKegList = JSON.parse(JSON.stringify(this.state.masterTappedKegList));
+    newTappedKegList[key].important = !newTappedKegList[key].important;
+    this.setState({
+      masterTappedKegList: newMasterTappedKegList
+    }, () => {
+      console.log(this.state.masterTappedKegList);
     });
-    this.setState({masterTappedKegList: newMasterTappedKegList});
-  }
+  };
 
   handleAddingNewKegSubmit(event) {
     event.preventDefault();
-    this.state.onNewKegAddition({name: _name.value, brewery: _brewery.value, style: _style.value, abv: _abv.value, ibu: _ibu.value, price: _price.value, pintCount: _pintCount.value, region: _region.value});
+    this.onNewKegAddition({name: _name.value, brewery: _brewery.value, style: _style.value, abv: _abv.value, ibu: _ibu.value, price: _price.value, pintCount: _pintCount.value, region: _region.value, id: v4()});
     _name.value = '';
     _brewery.value = '';
     _style.value = '';
@@ -185,7 +188,7 @@ class KegList extends React.Component {
 
 
 
-  render(){
+  render(props){
     return(
       <div className="kegListStyles">
         <style jsx>{`
@@ -200,7 +203,7 @@ class KegList extends React.Component {
             filter: drop-shadow(0 0 0.5rem black);
           }
         `}</style>
-        {this.state.masterTappedKegList.map((beer, index, abvColorChange) =>
+        {this.state.masterTappedKegList.map((beer) =>
           <Keg tapped={beer.tapped}
             name={beer.name}
             brewery={beer.brewery}
@@ -211,7 +214,7 @@ class KegList extends React.Component {
             price={beer.price}
             pintCount={beer.pintCount}
             region={beer.region}
-            key={index}
+            key={beer.id}
           />
         )}
         <form onSubmit={this.handleAddingNewKegSubmit}>
@@ -272,5 +275,6 @@ class KegList extends React.Component {
 //handleAddingNewKegSubmit function is being called! but not correctly connecting with onNewKegAddition
 //first change props to this
 //second change to this.state.
+//name is not defined
 
 export default KegList;

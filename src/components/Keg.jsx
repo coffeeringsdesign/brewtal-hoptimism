@@ -107,7 +107,7 @@ Keg.propTypes = {
   price: PropTypes.string,
   pintCount: PropTypes.number,
   region: PropTypes.string,
-  lowPint: PropTypes.bool
+  lowPint: PropTypes.bool,
 };
 
 export default Keg;
