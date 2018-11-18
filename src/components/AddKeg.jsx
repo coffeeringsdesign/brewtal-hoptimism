@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-function AddKeg(props, { onNewKegAddition }) {
+function AddKeg(props) {
   let _name = null;
   let _brewery = null;
   let _style = null;
@@ -24,6 +24,8 @@ function AddKeg(props, { onNewKegAddition }) {
     height: '25px',
     margin: '10px 0'
   };
+
+
 
   function handleAddingNewKegSubmit(event) {
     event.preventDefault();
@@ -92,7 +94,7 @@ function AddKeg(props, { onNewKegAddition }) {
           <option value='local'> National Region </option>
           <option value='local'> International Region </option>
         </select>
-        <button stype='submit' style={inputStyles}>Add Keg</button>
+        <button style='submit' style={inputStyles}>Add Keg</button>
       </form>
     </div>
   );
