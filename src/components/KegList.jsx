@@ -157,15 +157,14 @@ class KegList extends React.Component {
     this.onAddingNewKegSubmit = this.onAddingNewKegSubmit.bind(this);
   }
 
-  onAddingNewKegSubmit(key) {  //finally getting called
+  onAddingNewKegSubmit(key) {
     let newKegId = v4();
     let newMasterTappedKegList = JSON.parse(JSON.stringify(this.state.masterTappedKegList));
     newMasterTappedKegList.push(key);
-    // console.log(newMasterTappedKegList);
     this.setState({
       masterTappedKegList: newMasterTappedKegList
     }, () => {
-      console.log(this.state.masterTappedKegList); ///getting called thru here, but the new keg isn't getting added
+      console.log(this.state.masterTappedKegList);
     });
   };
 

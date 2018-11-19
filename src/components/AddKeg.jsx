@@ -10,6 +10,7 @@ function AddKeg(props) {
   let _price = null;
   let _pintCount = null;
   let _region = null;
+  let _img = null;
 
   const addNewKegFormStyles = {
     display: 'flex',
@@ -28,9 +29,8 @@ function AddKeg(props) {
 
 
   function handleAddingNewKegSubmit(event) {
-    event.preventDefault(); //below values are being created
-    props.onAddingNewKegSubmit({tapped: true, name: _name.value, brewery: _brewery.value, style: _style.value, abv: _abv.value, ibu: _ibu.value, price: _price.value, pintCount: _pintCount.value, region: _region.value, lowPint: false});
-    //console.log(_name.value); - these are coming thru
+    event.preventDefault();
+    props.onAddingNewKegSubmit({tapped: true, name: _name.value, brewery: _brewery.value, img: _img.value, style: _style.value, abv: _abv.value, ibu: _ibu.value, price: _price.value, pintCount: _pintCount.value, region: _region.value, lowPint: false});
     _name.value = '';
     _brewery.value = '';
     _style.value = '';
@@ -57,6 +57,12 @@ function AddKeg(props) {
           type='text'
           id='brewery'
           ref={(input) => {_brewery = input;}}/>
+        <label>Enter URL of image:</label>
+        <input
+          style={inputStyles}
+          type='text'
+          id='img'
+          ref={(input) => {_img = input;}}/>
         <label>Enter Style:</label>
         <input
           style={inputStyles}
