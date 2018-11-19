@@ -29,7 +29,7 @@ function AddKeg(props) {
 
   function handleAddingNewKegSubmit(event) {
     event.preventDefault();
-    props.onNewKegAddition({name: _name.value, brewery: _brewery.value, style: _style.value, abv: _abv.value, ibu: _ibu.value, price: _price.value, pintCount: _pintCount.value, region: _region.value});
+    props.onAddingNewKegSubmit({name: _name.value, brewery: _brewery.value, style: _style.value, abv: _abv.value, ibu: _ibu.value, price: _price.value, pintCount: _pintCount.value, region: _region.value});
     _name.value = '';
     _brewery.value = '';
     _style.value = '';
@@ -101,7 +101,7 @@ function AddKeg(props) {
 }
 
 AddKeg.propTypes = {
-  onNewKegAddition: PropTypes.func
+  onAddingNewKegSubmit: PropTypes.func
 };
 
 export default AddKeg;

@@ -11,6 +11,8 @@ import furious from '../assets/images/furious.jpg';
 import sculpin from '../assets/images/sculpin.jpg';
 import { v4 } from 'uuid';
 import PropTypes from 'prop-types';
+import AddKeg from './AddKeg';
+import EditKeg from './EditKeg';
 
 
 
@@ -154,19 +156,10 @@ class KegList extends React.Component {
         }
       ]
     };
-    this.onNewKegAddition = this.onNewKegAddition.bind(this);
+    this.onAddingNewKegSubmit = this.onAddingNewKegSubmit.bind(this);
   }
 
-  // abvColorChange(abvColorClass) {
-  //   if (this.state.masterTappedKegList.abv >= 9){
-  //     return abvColorClass = "#C65543";
-  //   } else if ((this.state.masterTappedKegList.abv <=4) && (this.state.masterTappedKegList.abv <=8)) {
-  //     return abvColorClass = "#D16655";
-  //   } else {
-  //     return abvColorClass = "#F99E90";
-  //   }
-  // }
-  onNewKegAddition(key) {
+  onAddingNewKegSubmit(key) {  //finally getting called
     let newKegId = v4();
     let newTappedKegList = JSON.parse(JSON.stringify(this.state.masterTappedKegList));
     newTappedKegList[key].important = !newTappedKegList[key].important;
@@ -177,7 +170,7 @@ class KegList extends React.Component {
     });
   };
 
-  render(props){
+  render(){
     return(
       <div className="kegListStyles">
         <style jsx>{`
@@ -206,6 +199,8 @@ class KegList extends React.Component {
             key={beer.id}
           />
         )}
+        <EditKeg/>
+        <AddKeg onAddingNewKegSubmit={this.onAddingNewKegSubmit}/>
       </div>
     );
   }
