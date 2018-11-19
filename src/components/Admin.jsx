@@ -10,8 +10,6 @@ function Admin() {
   return(
     <div style={adminContainerStyles}>
       <KegList/>
-      <EditKeg/>
-      <AddKeg/>
     </div>
   );
 }

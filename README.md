@@ -64,6 +64,8 @@ on 2nd Friday Refactor adding:
 2. Began trying to get the ABV to change color according to percentage. Not sure of where to add the function yet.
 3. I'm not 100% sure that my choice of state placement/heirarchy of the bottom of the tree layout. I can't foresee any real issues arrising but I am unsure if it is best practices.
 4. Having issues locating where to place a function to conditionally alter css values.
+5. Beginning a rework in order to build and establish functionality on App and then move them to the other appropriate components.
+6. Keys becoming an issues. Decide to add in UUID.
 
 
 ## Setup/Installation Requirements

@@ -9,12 +9,16 @@ import fatTire from '../assets/images/fatTire.jpeg';
 import citradelic from '../assets/images/citradelic.jpg';
 import furious from '../assets/images/furious.jpg';
 import sculpin from '../assets/images/sculpin.jpg';
+import { v4 } from 'uuid';
+import PropTypes from 'prop-types';
+import AddKeg from './AddKeg';
+import EditKeg from './EditKeg';
 
 class KegList extends React.Component {
-
-  constructor(props) {
+  constructor() {
     super();
     this.state = {
+
       tapped: true,
       lowPint: false,
       masterTappedKegList: [
@@ -150,24 +154,20 @@ class KegList extends React.Component {
         }
       ]
     };
-    // this.abvColorChange = this.abvColorChange.bind(this);
+    this.onAddingNewKegSubmit = this.onAddingNewKegSubmit.bind(this);
   }
 
-  // abvColorChange(abvColorClass) {
-  //   if (this.state.masterTappedKegList.abv >= 9){
-  //     return abvColorClass = "#C65543";
-  //   } else if ((this.state.masterTappedKegList.abv <=4) && (this.state.masterTappedKegList.abv <=8)) {
-  //     return abvColorClass = "#D16655";
-  //   } else {
-  //     return abvColorClass = "#F99E90";
-  //   }
-  // }
-  handleSendingNewKegToList() {
-    let newMasterTappedKegList = Object.assign({}, this.state.masterTappedKegList, {
-      [newKeg.id]: newTicket
+  onAddingNewKegSubmit(key) {  //finally getting called
+    let newKegId = v4();
+    let newMasterTappedKegList = JSON.parse(JSON.stringify(this.state.masterTappedKegList));
+    newMasterTappedKegList.push(key);
+    // console.log(newMasterTappedKegList);
+    this.setState({
+      masterTappedKegList: newMasterTappedKegList
+    }, () => {
+      console.log(this.state.masterTappedKegList); ///getting called thru here, but the new keg isn't getting added
     });
-    this.setState({masterTappedKegList: newMasterTappedKegList});
-  }
+  };
 
   render(){
     return(
@@ -184,7 +184,7 @@ class KegList extends React.Component {
             filter: drop-shadow(0 0 0.5rem black);
           }
         `}</style>
-        {this.state.masterTappedKegList.map((beer, index, abvColorChange) =>
+        {this.state.masterTappedKegList.map((beer) =>
           <Keg tapped={beer.tapped}
             name={beer.name}
             brewery={beer.brewery}
@@ -195,12 +195,19 @@ class KegList extends React.Component {
             price={beer.price}
             pintCount={beer.pintCount}
             region={beer.region}
-            key={index}
-            onNewKegAddition={this.handleSendingNewKegToList}/>
+            key={beer.id}
+          />
         )}
+        <EditKeg/>
+        <AddKeg onAddingNewKegSubmit={this.onAddingNewKegSubmit}/>
       </div>
     );
   }
 }
+
+KegList.propTypes = {
+  kegList: PropTypes.array
+}
+
 
 export default KegList;
