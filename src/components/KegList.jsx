@@ -14,8 +14,6 @@ import PropTypes from 'prop-types';
 import AddKeg from './AddKeg';
 import EditKeg from './EditKeg';
 
-
-
 class KegList extends React.Component {
   constructor() {
     super();
@@ -161,12 +159,13 @@ class KegList extends React.Component {
 
   onAddingNewKegSubmit(key) {  //finally getting called
     let newKegId = v4();
-    let newTappedKegList = JSON.parse(JSON.stringify(this.state.masterTappedKegList));
-    newTappedKegList[key].important = !newTappedKegList[key].important;
+    let newMasterTappedKegList = JSON.parse(JSON.stringify(this.state.masterTappedKegList));
+    newMasterTappedKegList.push(key);
+    // console.log(newMasterTappedKegList);
     this.setState({
       masterTappedKegList: newMasterTappedKegList
     }, () => {
-      console.log(this.state.masterTappedKegList);
+      console.log(this.state.masterTappedKegList); ///getting called thru here, but the new keg isn't getting added
     });
   };
 
@@ -204,6 +203,10 @@ class KegList extends React.Component {
       </div>
     );
   }
+}
+
+KegList.propTypes = {
+  kegList: PropTypes.array
 }
 
 

@@ -28,8 +28,9 @@ function AddKeg(props) {
 
 
   function handleAddingNewKegSubmit(event) {
-    event.preventDefault();
-    props.onAddingNewKegSubmit({name: _name.value, brewery: _brewery.value, style: _style.value, abv: _abv.value, ibu: _ibu.value, price: _price.value, pintCount: _pintCount.value, region: _region.value});
+    event.preventDefault(); //below values are being created
+    props.onAddingNewKegSubmit({tapped: true, name: _name.value, brewery: _brewery.value, style: _style.value, abv: _abv.value, ibu: _ibu.value, price: _price.value, pintCount: _pintCount.value, region: _region.value, lowPint: false});
+    //console.log(_name.value); - these are coming thru
     _name.value = '';
     _brewery.value = '';
     _style.value = '';
