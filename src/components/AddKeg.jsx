@@ -26,8 +26,6 @@ function AddKeg(props) {
     margin: '10px 0'
   };
 
-
-
   function handleAddingNewKegSubmit(event) {
     event.preventDefault();
     props.onAddingNewKegSubmit({tapped: true, name: _name.value, brewery: _brewery.value, img: _img.value, style: _style.value, abv: _abv.value, ibu: _ibu.value, price: _price.value, pintCount: _pintCount.value, region: _region.value, lowPint: false});

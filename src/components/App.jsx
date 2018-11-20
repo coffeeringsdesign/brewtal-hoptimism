@@ -4,7 +4,7 @@ import Header from './Header';
 import Visitor from './Visitor';
 import Admin from './Admin';
 
-function App(){
+function App(props){
 
 
   return (
@@ -12,10 +12,12 @@ function App(){
       <Header/>
       <Switch>
         <Route exact path='/' component={Visitor} />
-        <Route path='/admin' component={Admin} />
+        <Route path='/admin' render={(props)=><Admin currentRouterPath={props.location.pathname} />} />
       </Switch>
     </div>
   );
 }
+
+
 
 export default App;

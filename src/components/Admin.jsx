@@ -1,17 +1,21 @@
 import React from 'react';
 import KegList from './KegList';
-import AddKeg from './AddKeg';
-import EditKeg from './EditKeg';
+import PropTypes from 'prop-types';
 
-function Admin() {
+
+function Admin(props) {
   const adminContainerStyles = {
     marginBottom: '70px'
   };
   return(
     <div style={adminContainerStyles}>
-      <KegList/>
+      <KegList currentRouterPath={props.currentRouterPath}/>
     </div>
   );
 }
+// props.currentRouterPath is working
+Admin.propTypes = {
+  currentRouterPath: PropTypes.string.isRequired
+};
 
 export default Admin;

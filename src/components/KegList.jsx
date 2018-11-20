@@ -15,8 +15,8 @@ import AddKeg from './AddKeg';
 import EditKeg from './EditKeg';
 
 class KegList extends React.Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
 
       tapped: true,
@@ -154,7 +154,38 @@ class KegList extends React.Component {
         }
       ]
     };
+
+    const loopThruMasterList = <div className="kegListStyles">
+      <style jsx>{`
+      .kegListStyles {
+        margin-left: auto;
+        margin-right: auto;
+        padding-top: 20px;
+        width: 97%;
+        padding-bottom: 70px;
+        background-color: white;
+        margin-bottom: 25px;
+        filter: drop-shadow(0 0 0.5rem black);
+      }
+    `}</style>
+      {this.state.masterTappedKegList.map((beer, props) =>
+        <Keg tapped={beer.tapped}
+          name={beer.name}
+          brewery={beer.brewery}
+          img={beer.img}
+          style={beer.style}
+          abv={beer.abv}
+          ibu={beer.ibu}
+          price={beer.price}
+          pintCount={beer.pintCount}
+          region={beer.region}
+          key={beer.id}
+          currentRouterPath={props.currentRouterPath}
+        />
+      )}
+    </div>;
     this.onAddingNewKegSubmit = this.onAddingNewKegSubmit.bind(this);
+    this.render = this.render.bind(props, this, loopThruMasterList);
   }
 
   onAddingNewKegSubmit(key) {
@@ -164,49 +195,34 @@ class KegList extends React.Component {
     this.setState({
       masterTappedKegList: newMasterTappedKegList
     }, () => {
-      console.log(this.state.masterTappedKegList);
+      console.log(this.state.masterTappedKegList.abv);
     });
-  };
+  }
+///add back in Edit Keg below
+  render(props, loopThruMasterList){
+    console.log(props.name + 'booga this is it');
+    if (this.currentRouterPath === '/admin') {
+      return(
+        <div>
+          {loopThruMasterList}
+          <AddKeg onAddingNewKegSubmit={this.onAddingNewKegSubmit}/>
+        </div>
 
-  render(){
-    return(
-      <div className="kegListStyles">
-        <style jsx>{`
-          .kegListStyles {
-            margin-left: auto;
-            margin-right: auto;
-            padding-top: 20px;
-            width: 97%;
-            padding-bottom: 70px;
-            background-color: white;
-            margin-bottom: 25px;
-            filter: drop-shadow(0 0 0.5rem black);
-          }
-        `}</style>
-        {this.state.masterTappedKegList.map((beer) =>
-          <Keg tapped={beer.tapped}
-            name={beer.name}
-            brewery={beer.brewery}
-            img={beer.img}
-            style={beer.style}
-            abv={beer.abv}
-            ibu={beer.ibu}
-            price={beer.price}
-            pintCount={beer.pintCount}
-            region={beer.region}
-            key={beer.id}
-          />
-        )}
-        <EditKeg/>
-        <AddKeg onAddingNewKegSubmit={this.onAddingNewKegSubmit}/>
-      </div>
-    );
+      );
+    } else {
+      return(
+        <div>
+          {loopThruMasterList}
+        </div>
+      );
+    }
   }
 }
 
 KegList.propTypes = {
-  kegList: PropTypes.array
-}
+  kegList: PropTypes.array,
+  currentRouterPath: PropTypes.string
+};
 
 
 export default KegList;
