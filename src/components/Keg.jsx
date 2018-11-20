@@ -2,16 +2,15 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 function Keg(props) {
-  function abvColorChange(props, abvColorClass) {
-    console.log('yo is called');
+  function abvColorChange() {
+    let abvColorClassSelected;
     if (props.abv >= 9){
-      let abvColorClassSelected = '#C65543';
+      return abvColorClassSelected = '#C65543';
     } else if ((props.abv <=4) && (props.abv <=8)) {
-      let abvColorClassSelected = '#D16655';
+      return abvColorClassSelected = '#D16655';
     } else {
-      let abvColorClassSelected = '#F99E90';
+      return abvColorClassSelected = '#F99E90';
     }
-    return abvColorClassSelected;
   }
 
   const kegStyles = {
@@ -50,13 +49,10 @@ function Keg(props) {
     height: '200px',
     width: '100px'
   };
-  // const abvColorStyle = {
-  //   color: {abvColorClassSelected},
-  // };
+  const abvColorStyle = {
+    color: abvColorChange(),
+  };
 
-
-
-  // style={abvColorClass}>
 
   return(
     <div style={kegStyles}>
@@ -64,12 +60,11 @@ function Keg(props) {
         <img style={beerLogoStyles} src={props.img}/>
       </div>
       <div>
-        <div abvColorClass={this.abvColorClass} style={kegInformationStyles}>
+        <div  style={kegInformationStyles}>
           <h1>{props.name}</h1>
           <h2>{props.brewery}</h2>
           <h3>Style: {props.style}</h3>
-          <h4> ABV: {props.abv}%
-          </h4>
+          <h4 style={abvColorStyle}>ABV: {props.abv}%</h4>
           <h4>IBU: {props.ibu}</h4>
         </div>
       </div>

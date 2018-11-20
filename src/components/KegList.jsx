@@ -198,16 +198,14 @@ class KegList extends React.Component {
       console.log(this.state.masterTappedKegList.abv);
     });
   }
-///add back in Edit Keg below
+///add back in Edit Keg below when ready
   render(props, loopThruMasterList){
-    console.log(props.name + 'booga this is it');
     if (this.currentRouterPath === '/admin') {
       return(
         <div>
           {loopThruMasterList}
           <AddKeg onAddingNewKegSubmit={this.onAddingNewKegSubmit}/>
         </div>
-
       );
     } else {
       return(
@@ -223,6 +221,5 @@ KegList.propTypes = {
   kegList: PropTypes.array,
   currentRouterPath: PropTypes.string
 };
-
 
 export default KegList;
