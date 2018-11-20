@@ -3,22 +3,20 @@ import PropTypes from 'prop-types';
 
 function Keg(props) {
   function abvColorChange() {
-    let abvColorClassSelected;
     if (props.abv >= 9){
-      return abvColorClassSelected = '#db311e';
+      return '#db311e';
     } else if ((props.abv >=5) && (props.abv <=8)) {
-      return abvColorClassSelected = '#d27c42';
+      return '#d27c42';
     } else {
-      return abvColorClassSelected = '#E9B657';
+      return '#E9B657';
     }
   }
 
   function lowPintNoticeColorChange() {
-    let pintCountColor;
     if (props.pintCount <= 10){
-      return pintCountColor = '#db311e';
+      return '#db311e';
     } else {
-      return pintCountColor = '#797F7F';
+      return '#797F7F';
     }
   }
 

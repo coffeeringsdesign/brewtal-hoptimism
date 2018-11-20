@@ -4,7 +4,7 @@ import Header from './Header';
 import Visitor from './Visitor';
 import Admin from './Admin';
 
-function App(props){
+function App(){
 
 
   return (

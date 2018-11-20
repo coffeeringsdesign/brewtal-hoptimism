@@ -10,10 +10,10 @@ import citradelic from '../assets/images/citradelic.jpg';
 import furious from '../assets/images/furious.jpg';
 import sculpin from '../assets/images/sculpin.jpg';
 import pbr from '../assets/images/pbr.jpg';
-import { v4 } from 'uuid';
+// import { v4 } from 'uuid';
 import PropTypes from 'prop-types';
 import AddKeg from './AddKeg';
-import EditKeg from './EditKeg';
+// import EditKeg from './EditKeg';
 
 class KegList extends React.Component {
   constructor(props) {
@@ -191,7 +191,7 @@ class KegList extends React.Component {
   }
 
   onAddingNewKegSubmit(key) {
-    let newKegId = v4();
+    // let newKegId = v4();
     let newMasterTappedKegList = JSON.parse(JSON.stringify(this.state.masterTappedKegList));
     newMasterTappedKegList.push(key);
     this.setState({
@@ -200,7 +200,7 @@ class KegList extends React.Component {
       console.log(this.state.masterTappedKegList.abv);
     });
   }
-///add back in Edit Keg below when ready
+  ///add back in Edit Keg below when ready
   render(props, loopThruMasterList){
     if (this.currentRouterPath === '/admin') {
       return(
