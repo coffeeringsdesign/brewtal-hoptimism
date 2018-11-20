@@ -5,11 +5,20 @@ function Keg(props) {
   function abvColorChange() {
     let abvColorClassSelected;
     if (props.abv >= 9){
-      return abvColorClassSelected = '#C65543';
-    } else if ((props.abv <=4) && (props.abv <=8)) {
-      return abvColorClassSelected = '#D16655';
+      return abvColorClassSelected = '#db311e';
+    } else if ((props.abv >=5) && (props.abv <=8)) {
+      return abvColorClassSelected = '#d27c42';
     } else {
-      return abvColorClassSelected = '#F99E90';
+      return abvColorClassSelected = '#E9B657';
+    }
+  }
+
+  function lowPintNoticeColorChange() {
+    let pintCountColor;
+    if (props.pintCount <= 10){
+      return pintCountColor = '#db311e';
+    } else {
+      return pintCountColor = '#797F7F';
     }
   }
 
@@ -52,6 +61,9 @@ function Keg(props) {
   const abvColorStyle = {
     color: abvColorChange(),
   };
+  const pintCountColorStyle = {
+    color: lowPintNoticeColorChange(),
+  };
 
 
   return(
@@ -75,7 +87,7 @@ function Keg(props) {
         </div>
         <div>
           <h4>Pints Left:</h4>
-          <h2>{props.pintCount}</h2>
+          <h2 style={pintCountColorStyle}>{props.pintCount}</h2>
         </div>
         <div>
           <h4>Region:</h4>

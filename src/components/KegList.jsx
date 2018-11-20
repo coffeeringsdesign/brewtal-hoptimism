@@ -9,6 +9,7 @@ import fatTire from '../assets/images/fatTire.jpeg';
 import citradelic from '../assets/images/citradelic.jpg';
 import furious from '../assets/images/furious.jpg';
 import sculpin from '../assets/images/sculpin.jpg';
+import pbr from '../assets/images/pbr.jpg';
 import { v4 } from 'uuid';
 import PropTypes from 'prop-types';
 import AddKeg from './AddKeg';
@@ -20,7 +21,6 @@ class KegList extends React.Component {
     this.state = {
 
       tapped: true,
-      lowPint: false,
       masterTappedKegList: [
         {
           tapped: true,
@@ -31,9 +31,8 @@ class KegList extends React.Component {
           abv: 6.5,
           ibu: '50',
           price: '$7',
-          pintCount: 101,
-          region: 'local',
-          lowPint: false
+          pintCount: 10,
+          region: 'local'
         },
         {
           tapped: true,
@@ -45,8 +44,19 @@ class KegList extends React.Component {
           ibu: '70',
           price: '$10',
           pintCount: 23,
-          region: 'national',
-          lowPint: false
+          region: 'national'
+        },
+        {
+          tapped: true,
+          name: 'Pabst Blue Ribbon',
+          brewery: 'Pabst Brewing Co',
+          img: pbr,
+          style: 'lager',
+          abv: 4.7,
+          ibu: 'n/a',
+          price: '$4',
+          pintCount: 99,
+          region: 'national'
         },
         {
           tapped: true,
@@ -58,8 +68,7 @@ class KegList extends React.Component {
           ibu: 'high',
           price: '$9',
           pintCount: 64,
-          region: 'national',
-          lowPint: false
+          region: 'national'
         },
         {
           tapped: true,
@@ -71,8 +80,7 @@ class KegList extends React.Component {
           ibu: '90+',
           price: '$8',
           pintCount: 55,
-          region: 'local',
-          lowPint: false
+          region: 'local'
         },
         {
           tapped: true,
@@ -84,8 +92,7 @@ class KegList extends React.Component {
           ibu: '50',
           price: '$7',
           pintCount: 1002,
-          region: 'national',
-          lowPint: false
+          region: 'national'
         },
         {
           tapped: true,
@@ -97,8 +104,7 @@ class KegList extends React.Component {
           ibu: '60',
           price: '$8',
           pintCount: 86,
-          region: 'local',
-          lowPint: false
+          region: 'local'
         },
         {
           tapped: true,
@@ -110,8 +116,7 @@ class KegList extends React.Component {
           ibu: '63',
           price: '$7',
           pintCount: 34,
-          region: 'local',
-          lowPint: false
+          region: 'local'
         },
         {
           tapped: true,
@@ -123,8 +128,7 @@ class KegList extends React.Component {
           ibu: '19',
           price: '$6',
           pintCount: 98,
-          region: 'local',
-          lowPint: false
+          region: 'local'
         },
         {
           tapped: true,
@@ -136,8 +140,7 @@ class KegList extends React.Component {
           ibu: '22',
           price: '$6',
           pintCount: 45,
-          region: 'national',
-          lowPint: false
+          region: 'national'
         },
         {
           tapped: true,
@@ -149,8 +152,7 @@ class KegList extends React.Component {
           ibu: '75',
           price: '$7',
           pintCount: 53,
-          region: 'local',
-          lowPint: false
+          region: 'local'
         }
       ]
     };
