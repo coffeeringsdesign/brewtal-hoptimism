@@ -1,9 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-function AddKeg(props) {
-  //props = onAddingNewKegSubmit
-  // console.log(props.onAddingNewKegSubmit);
+function AddKeg( props) {
+  console.log(props);
   let _name = null;
   let _brewery = null;
   let _style = null;
@@ -13,6 +12,20 @@ function AddKeg(props) {
   let _pintCount = null;
   let _region = null;
   let _img = null;
+
+  function handleAddingNewKegSubmit(event) {
+    event.preventDefault();
+    // console.log(onAddingNewKegSubmit);
+    props.onAddingNewKegSubmit({tapped: true, name: _name.value, brewery: _brewery.value, img: _img.value, style: _style.value, abv: _abv.value, ibu: _ibu.value, price: _price.value, pintCount: _pintCount.value, region: _region.value});
+    _name.value = '';
+    _brewery.value = '';
+    _style.value = '';
+    _abv.value = '';
+    _ibu.value = '';
+    _price.value = '';
+    _pintCount.value = '';
+    _region.value = '';
+  };
 
   const addNewKegFormStyles = {
     display: 'flex',
@@ -27,19 +40,6 @@ function AddKeg(props) {
     height: '25px',
     margin: '10px 0'
   };
-
-  function handleAddingNewKegSubmit(event) {
-    event.preventDefault();
-    props.onAddingNewKegSubmit({tapped: true, name: _name.value, brewery: _brewery.value, img: _img.value, style: _style.value, abv: _abv.value, ibu: _ibu.value, price: _price.value, pintCount: _pintCount.value, region: _region.value});
-    _name.value = '';
-    _brewery.value = '';
-    _style.value = '';
-    _abv.value = '';
-    _ibu.value = '';
-    _price.value = '';
-    _pintCount.value = '';
-    _region.value = '';
-  }
 
   return(
     <div>
@@ -101,7 +101,7 @@ function AddKeg(props) {
           <option value='local'> National Region </option>
           <option value='local'> International Region </option>
         </select>
-        <button type='submit' style={inputStyles}>Add Keg</button>
+        <button style='submit' style={inputStyles}>Add Keg</button>
       </form>
     </div>
   );

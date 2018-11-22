@@ -66,6 +66,7 @@ on 2nd Friday Refactor adding:
 4. Having issues locating where to place a function to conditionally alter css values.
 5. Beginning a rework in order to build and establish functionality on App and then move them to the other appropriate components.
 6. Keys becoming an issues. Decide to add in UUID.
+7. I managed to get the AddKeg component to work correctly, to then break it adding functions that changed css upon values. After a couple days trying to get it to work again I am unable to get Kegs to be added. It is saying props is undefined in the handleAddingNewKegSubmit function in AddKeg.
 
 
 ## Setup/Installation Requirements
